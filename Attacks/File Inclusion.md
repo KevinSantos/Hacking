@@ -27,6 +27,6 @@
 * Add **?** after the file path (eg. http://10.10.10.10?page=http://localhost/reverse.txt?)
 
 ### Mitigation
-* [Local](https://github.com/KevinSantos/Hacking/blob/master/fileInclusionMitigation.php)
+* [Local](https://github.com/KevinSantos/Hacking/blob/master/Mitigation/fileInclusionMitigation.php)
 * Remote
   * Set **allow_url_fopen** and **allow_url_include** to **Off** in php.ini
