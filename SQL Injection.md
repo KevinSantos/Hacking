@@ -32,7 +32,7 @@
    <?php
    $hackerInput = "admin' union select #";
 
-   prepare("SELECT * FROM accounts WHERE username = ?);
+   prepare("SELECT * FROM accounts WHERE username = ?");
    execute(array('$hackerInput');
    ?>
    ```
