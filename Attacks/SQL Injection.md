@@ -26,7 +26,7 @@
 * We can get shell with **SQLMap**
 
 ### Mitigation
-* [Fast way](https://github.com/KevinSantos/Hacking/blob/master/sqlInjectionMitigation.php)
+* [Fast way](https://github.com/KevinSantos/Hacking/blob/master/Mitigation/sqlInjectionMitigation.php)
 * Best way:
    ```php
    <?php
