@@ -22,3 +22,5 @@
     ```
   * Send URL with javascript code to the victim
   * When victim opens url, youll get a session in BEEF
+  
+  ### [Mitigation](https://github.com/KevinSantos/Hacking/blob/master/Mitigation/xssMitigation.php)
