@@ -9,4 +9,4 @@
   
   
   
-### [Mitigation](https://github.com/KevinSantos/Hacking/blob/master/fileUploadMitigation.php)
+### [Mitigation](https://github.com/KevinSantos/Hacking/blob/master/Mitigation/fileUploadMitigation.php)
