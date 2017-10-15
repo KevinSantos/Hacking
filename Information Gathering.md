@@ -5,3 +5,5 @@
   * **$ cd knock/knockpy**
   * **$ python knock.py _target_**
 * Dirb - Find hidden files
+  * **$ dirb _site_ _[wordlist]_ _[options]_**
+ 
