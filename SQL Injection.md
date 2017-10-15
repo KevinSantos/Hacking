@@ -33,6 +33,6 @@
    $hackerInput = "admin' union select #";
 
    prepare("SELECT * FROM accounts WHERE username = ?);
-   execute(array('admin' union select #');
+   execute(array('$hackerInput');
    ?>
    ```
