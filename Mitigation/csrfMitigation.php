@@ -1,35 +1,39 @@
 /* CLIENT SIDE */
 <?php
- session_start();
- $token= md5(uniqid());
- $_SESSION['delete_customer_token']= $token;
- session_write_close();
-?>
-<html>
-<body>
-<form method="post" action="confirm_save.php">
- <input type="hidden" name="token" value="<?php echo $token; ?>" />
-Do you really want to delete?
-<input type="submit" value=" Yes " />
-<input type="button" value=" No " onclick="history.go(-1);" />
-</form>
-</body>
-</html>
-/*-----------------*/
-/* CLIENT SIDE */
-<?php
- session_start();
- $token = $_SESSION['delete_customer_token'];
- unset($_SESSION['delete_customer_token']);
- session_write_close();
- if ($token && $_POST['token']==$token) {
-   // delete the record
- } else {
-   // log potential CSRF attack.
- }
+     session_start();
+     $token= md5(uniqid());
+     $_SESSION['delete_customer_token']= $token;
+     session_write_close();
 ?>
 
+<html>
+    <body>
+         <form method="post" action="confirm_save.php">
+              <input type="hidden" name="token" value="<?php echo $token; ?>" />
+              Do you really want to delete?
+              <input type="submit" value=" Yes " />
+              <input type="button" value=" No " onclick="history.go(-1);" />
+         </form>
+    </body>
+</html>
 /*-----------------*/
+
+
+/* CLIENT SIDE */
+<?php
+     session_start();
+     $token = $_SESSION['delete_customer_token'];
+     unset($_SESSION['delete_customer_token']);
+     session_write_close();
+     if ($token && $_POST['token']==$token) {
+       // delete the record
+     } else {
+       // log potential CSRF attack.
+     }
+?>
+/*-----------------*/
+
+
 /* Example 1 */
 <?php
             
