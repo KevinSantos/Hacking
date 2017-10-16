@@ -1,5 +1,3 @@
-
-CSRF Source
 <?php
             
     if (isset($_GET['Change'])) {
