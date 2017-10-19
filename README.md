@@ -1,3 +1,7 @@
+# TODO
+* Usar cookies/session em PHP
+* Como mandar de forma segura a pass pela rede de forma segura para prevenir MITM
+
 # Links Uteis
 
 ## CTFs
